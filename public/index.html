@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Este site desvenda os enigmas das profundezas oceânicas, trazendo descobertas, curiosidades e relatos sobre o que habita além da luz." />
+  <title>Mistérios Do Oceano — O oceano guarda segredos</title>
+<link rel="stylesheet" href="style.css">
+  <!-- STYLE: coloque todo o CSS aqui (arquivo separado: style.css) -->
+<script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header" role="banner">
+      <div class="brand" aria-label="Identificação do projeto">
+        <div class="logo" aria-hidden="true">TM</div>
+        <div>
+          <h1>Mistérios Do Oceano</h1>
+          <p class="muted">Equipe: Tritões do Mistério — Projeto Fundo do Mar</p>
+        </div>
+      </div>
+
+      <nav class="primary" aria-label="Navegação principal">
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#fatos">Fatos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#faq">FAQ</a>
+        <button id="themeToggle" class="btn secondary" aria-pressed="false" aria-label="Alternar modo claro e escuro">Modo Claro</button>
+      </nav>
+    </header>
+
+    <main role="main">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content fade-in" role="region" aria-label="Introdução ao projeto">
+          <p class="kicker pill">Tema do Projeto</p>
+          <h2 id="hero-title" class="headline">Mistérios Do Oceano</h2>
+          <p class="slogan">O oceano guarda segredos — venha descobri-los.</p>
+          <p class="summary">Este site desvenda os enigmas das profundezas oceânicas, trazendo descobertas, curiosidades e relatos sobre o que habita além da luz. Um espaço para explorar o desconhecido e mergulhar nos segredos que o mar ainda guarda.</p>
+
+          <div class="hero-cta" role="group" aria-label="Ações principais">
+            <button id="abrirIA" class="btn" aria-label="Iniciar reconhecimento facial">Reconhecimento Facial</button>
+            <button id="btnAbrirChatbot" class="btn secondary" aria-controls="chatbot" aria-label="Abrir chatbot">Abrir Chatbot</button>
+            <!-- TODO: Edite os textos abaixo para personalizar contato e ações do seu grupo -->
+            <a href="#fatos" class="btn secondary small">Explorar Fatos</a>
+          </div>
+
+          <p class="team small">Integrantes: Nicolas Dos Anjos Almeida Pires, Gabriel Santos De Lucena, Lorena Victoria Ferreira Dos Santos, Lays Goncalves Gama, Yasmin Costa Do Nascimento.</p>
+        </div>
+
+        <figure class="hero-media fade-in" role="img" aria-label="Imagem principal do fundo do mar">
+          <img src="https://s2-techtudo.glbimg.com/H73Fb1UZ3LO1pt2xTe5Opay8_Yg=/0x0:1596x893/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2025/9/j/xBye0wRqymqb45lrlABg/abertura-2.jpg" alt="Visão do oceano profundo com bioluminescência e rochas submersas">
+        </figure>
+      </section>
+
+      <!-- CURIOSIDADES -->
+      <section id="curiosidades" class="curiosidades" aria-labelledby="curiosidades-title">
+        <h2 id="curiosidades-title">Curiosidades</h2>
+        <p class="muted small">Fatos rápidos para você ficar boquiaberto.</p>
+        <div class="grid">
+          <div class="curio" role="article" tabindex="0">
+            <div class="icon" aria-hidden="true">🐙</div>
+            <div>
+              <h3>Mais de 80% inexplorado</h3>
+              <p>Mesmo com tecnologia, a maior parte do fundo do mar continua um mistério para os cientistas.</p>
+            </div>
+          </div>
+
+          <div class="curio" role="article" tabindex="0">
+            <div class="icon" aria-hidden="true">🌋</div>
+            <div>
+              <h3>Vulcões submersos</h3>
+              <p>Grande parte dos vulcões ativos da Terra está debaixo d’água, formando dorsais e cadeias submarinas.</p>
+            </div>
+          </div>
+
+          <div class="curio" role="article" tabindex="0">
+            <div class="icon" aria-hidden="true">💡</div>
+            <div>
+              <h3>Bioluminescência</h3>
+              <p>Muitos seres abissais produzem luz para caçar, se comunicar ou camuflar-se na escuridão.</p>
+            </div>
+          </div>
+
+          <div class="curio" role="article" tabindex="0">
+            <div class="icon" aria-hidden="true">⚫</div>
+            <div>
+              <h3>Pressão esmagadora</h3>
+              <p>A cada 10m a pressão aumenta ~1 atmosfera — na Fossa das Marianas, a pressão é superior a 1.000 atm.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FATOS / CIÊNCIA -->
+      <section id="fatos" aria-labelledby="fatos-title">
+        <h2 id="fatos-title">Fatos e Ciência</h2>
+        <p class="muted small">Descubra como a ciência explica os mistérios do oceano.</p>
+
+        <div class="grid fatos-cards">
+          <article class="card" tabindex="0" aria-labelledby="f1">
+            <h4 id="f1">Pressão Extrema</h4>
+            <p>A mais de 4.000 metros, a pressão pode ultrapassar 400 vezes a da superfície — organismos possuem adaptações únicas para sobreviver.</p>
+          </article>
+
+          <article class="card" tabindex="0" aria-labelledby="f2">
+            <h4 id="f2">Bioluminescência</h4>
+            <p>Seres abissais geram luz por reações químicas para comunicação, predação ou defesa — um recurso essencial na escuridão.</p>
+          </article>
+
+          <article class="card" tabindex="0" aria-labelledby="f3">
+            <h4 id="f3">Fendas Hidrotermais</h4>
+            <p>Ricas em minerais e calor, essas fendas sustentam ecossistemas completos que vivem sem luz solar por meio da quimiossíntese.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- GALERIA -->
+      <section id="galeria" aria-labelledby="galeria-title">
+        <h2 id="galeria-title">Galeria</h2>
+        <p class="muted small">Imagens selecionadas — clique para ampliar (comportamento demonstrativo).</p>
+
+        <div class="gallery" role="list">
+          <figure tabindex="0" role="listitem">
+            <img src="https://www.institucional.europa.com.br/blog/wp-content/uploads/2022/09/Depositphotos_352823970_S.jpg" alt="Vida marinha colorida próxima a um recife">
+            <figcaption>Coral saudável no oceano Pacífico.</figcaption>
+          </figure>
+
+          <figure tabindex="0" role="listitem">
+            <img src="https://www.mundocuriosidade.com.br/wp-content/uploads/2024/08/15-misterios-fascinantes-do-fundo-do-mar.jpeg" alt="Montagem com mistérios do fundo do mar">
+            <figcaption>Mistérios fascinantes do fundo do mar.</figcaption>
+          </figure>
+
+          <figure tabindex="0" role="listitem">
+            <img src="https://mega.ibxk.com.br/2024/09/06/06161114962355.jpg" alt="Imagem de uma fenda hidrotermal">
+            <figcaption>Fenda hidrotermal e vida ao redor.</figcaption>
+          </figure>
+
+          <figure tabindex="0" role="listitem">
+            <img src="https://osegredo.com.br/wp-content/uploads/2024/08/misterios_oceano.jpg" alt="Formações e estruturas misteriosas submersas">
+            <figcaption>Estruturas misteriosas submersas.</figcaption>
+          </figure>
+
+          <figure tabindex="0" role="listitem">
+            <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/henrietta_anchor_batavia.webp?w=760&h=498" alt="Navio afundado preservado no fundo do mar">
+            <figcaption>Navio afundado — história no fundo do mar.</figcaption>
+          </figure>
+
+          <figure tabindex="0" role="listitem">
+            <img src="https://cdn.crusoe.com.br/uploads/2025/11/maior-agua-viva-do-mundo-especie-juba-de-leao-o-maior-animal-do-oceano.webp" alt="Água-viva gigante na superfície do mar">
+            <figcaption>Juba-de-leão: a maior água-viva conhecida.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Perguntas Frequentes</h2>
+        <div>
+          <details>
+            <summary>O que são as profundezas oceânicas?</summary>
+            <p class="muted">São as partes mais profundas do oceano onde a luz do sol não chega e a pressão é extremamente alta.</p>
+          </details>
+
+          <details>
+            <summary>Existe vida nas profundezas do mar?</summary>
+            <p class="muted">Sim, milhares de espécies adaptadas à escuridão e à alta pressão vivem nas regiões abissais.</p>
+          </details>
+
+          <details>
+            <summary>Qual é o ponto mais profundo do oceano?</summary>
+            <p class="muted">A Fossa das Marianas, com cerca de 11.000 metros de profundidade.</p>
+          </details>
+
+          <details>
+            <summary>Como os cientistas exploram o fundo do mar?</summary>
+            <p class="muted">Usando submersíveis, ROVs (robôs), sonares e mapeamento remoto de alta tecnologia.</p>
+          </details>
+
+          <details>
+            <summary>O que é bioluminescência?</summary>
+            <p class="muted">Capacidade de alguns seres produzirem luz própria por reações químicas no organismo.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section aria-labelledby="cta-title">
+        <div class="cta">
+          <h3 id="cta-title">Quer saber mais?</h3>
+          <p class="muted">Aprofunde seu estudo — veja nossas fontes, baixe material e compartilhe descobertas com o grupo.</p>
+          <nav aria-label="Ações do CTA">
+            <a href="#galeria">Aprenda mais</a>
+            <!-- TODO: Substitua o link acima por um arquivo de download (ex.: material.pdf) -->
+          </nav>
+        </div>
+      </section>
+
+      <!-- Créditos / Fontes -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="credits small">
+          <div>Equipe: Tritões do Mistério — <span class="muted">Nicolas, Gabriel, Lorena, Lays, Yasmin</span></div>
+          <div>Fontes: <a href="https://www.institucional.europa.com.br" target="_blank" rel="noopener">Institucional Europa</a>, <a href="https://www.mundocuriosidade.com.br" target="_blank" rel="noopener">Mundo Curiosidade</a>, <a href="https://osegredo.com.br" target="_blank" rel="noopener">O Segredo</a>, <a href="https://nationalgeographicbrasil.com" target="_blank" rel="noopener">National Geographic Brasil</a>, <a href="https://mega.ibxk.com.br" target="_blank" rel="noopener">IBXK</a>, Crusoe</div>
+        </div>
+
+        <div style="display:flex;gap:.8rem;align-items:center;">
+          <a class="top-link" href="#hero-title">Voltar ao topo ↑</a>
+          <div id="copyright" class="small muted" aria-live="polite"></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ASIDE: Chatbot (inicialmente oculto) -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Chatbot-IA"
+      agent-id="7e9ea28d-fc2a-4f18-a435-1d31267d9a34"
+      language-code="pt-br">
+    </df-messenger>
+
+<!-- MODAL DE RECONHECIMENTO FACIAL -->
+<div id="cameraModal" class="camera-modal" aria-hidden="true">
+  <div class="camera-modal-content">
+    <button id="fecharModal" class="camera-close" title="Fechar">❌</button>
+    <h2 class="camera-title">Reconhecimento Facial</h2>
+    <div class="camera-video-box">
+      <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div class="camera-controls">
+      <button id="tirarFoto" class="camera-btn">📸 Tirar Foto</button>
+    </div>
+    <p id="modalStatus" class="camera-status">Aguardando...</p>
+    <canvas id="fotoCanvas" style="display:none;"></canvas>
+  </div>
+</div>
+
+  <!-- SCRIPT: coloque todo o JS aqui (arquivo separado: script.js) -->
+   <script defer src="script.js"> </script>
+ </body>
+</html>
